@@ -1,0 +1,22 @@
+name: Add Sponsor Labels
+
+on:
+  workflow_call:
+  issues:
+    types:
+      - opened
+      - edited
+
+permissions:
+  issues: write
+  pull-requests: write
+  contents: read
+
+jobs:
+  sponsors:
+    name: Label Sponsors
+    runs-on: ubuntu-latest
+    steps:
+      - uses: JasonEtco/is-sponsor-label-action@v1.2.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
