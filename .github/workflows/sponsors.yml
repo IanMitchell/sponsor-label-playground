@@ -7,10 +7,11 @@ on:
       - opened
       - edited
 
-permissions:
-  issues: write
-  pull-requests: write
-  contents: read
+# permissions:
+#   issues: write
+#   pull-requests: write
+#   contents: read
+permissions: write-all
 
 jobs:
   sponsors:
